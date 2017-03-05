@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<body>
+<script src="./ngtweet.min.js"></script>
+<body twitter-widget-initialize>
 
 <div ng-app="myApp" ng-controller="myCtrl">
     Name: <input ng-model="firstname">
@@ -10,13 +11,40 @@
 
 <script>
 var app = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngtweet']);
+
 app.controller('myCtrl', function($scope) {
     $scope.firstname = "John";
     $scope.lastname = "Doe";    
+    
 });
 </script>
+<twitter-widget>
+    <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">"No one likes Bit O' Honey." ~<a href="https://twitter.com/griffinmcelroy">@griffinmcelroy</a> <a href="https://twitter.com/hashtag/truth?src=hash">#truth</a></p>— Aru (@IAmAru) <a href="https://twitter.com/IAmAru/status/608455483507245059">June 10, 2015</a></blockquote>
+</twitter-widget>
 
-<p>Change the name inside the input field, and the model data will change automatically, and therefore also the header will change its value.</p>
+<twitter-timeline>
+    <a class="twitter-timeline"
+       href="https://twitter.com/IAmAru/lists/food-trucks"
+       data-widget-id="673710543212052480">
+       Tweets from https://twitter.com/IAmAru/lists/food-trucks
+    </a>
+<twitter-timeline>
+
+    <twitter-timeline twitter-timeline-id="'673710543212052480'"
+                  twitter-timeline-options='{"chrome": "hidden"}'>
+</twitter-timeline>
+    
+    
+    <twitter-timeline twitter-timeline-type="list"
+                  twitter-timeline-owner-screen-name="'IAmAru'"
+                  twitter-timeline-slug="'food-trucks'"
+                  twitter-timeline-options='{"chrome": "noheader"}'>
+</twitter-widget>
+    <p>Change the name inside the input field, and the model data will change automatically, and therefore also the header will change its value.</p>
+
 
 </body>
 </html>
+-->
+
